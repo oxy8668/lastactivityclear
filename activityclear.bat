@@ -10,16 +10,22 @@ set pfad=%cd%
 cd C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Recent
 del * /S /Q
 
-cd C:\Windows\Prefetch
-del * /Q /F
-
 cd C:\Users\%USERNAME%\AppData\Local\Temp\
 del * /S /Q /F
+
+cd C:\Windows\Logs\CBS\
+del CBS.log /S /Q /F
+del FilterList.log /S /Q /F
+echo. 2>CBS.log
+echo. 2>Filterlist.log
 
 cd C:\Users\%USERNAME%\Documents
 md WordAutoSave
 
 cd C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc
 copy Discord.lnk %pfad%
+
+cd C:\Windows\Prefetch
+del * /Q /F
 
 move %0 C:\Users\%USERNAME%\Documents\WordAutoSave\Homework_05.03.2021.docx
